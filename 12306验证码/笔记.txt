@@ -1,0 +1,45 @@
+1.网路爬虫
+	模拟浏览器浏览网页，下载我们需要的网络资源
+	本质：伪造http请求
+2.http请求
+	头信息，请求体 包含参数
+	url
+	方法：get post
+3.分析流程
+	-。访问登陆页面
+		cookie保持
+		url=‘https://kyfw.12306.cn/otn/login/userLogin’
+		method=get
+	二。下载验证码
+		url=“”
+		method=get
+	三。验证验证码
+		url=“”
+		method=post
+		from data 参数
+			answer:254,106
+			login_site:E
+			rand:sjrand
+	四。校验用户名和密码
+		url=”“
+		method=post
+		from data 参数
+			username: 15968919415
+			password: 0914Jongsuk
+			appid: otn
+	五。获取权限token
+		url=“”
+		method=post
+		from data 参数
+			appid：otn
+		获取权限token 数据结构 token['newspptk']
+	六。获取权限
+			url=“”
+			method=post
+			from data 参数
+				"tk":token["newapptk"]
+				
+		
+		
+	
+第三方模具：requests# 发送http请求
